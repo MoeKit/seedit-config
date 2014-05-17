@@ -1,3 +1,3 @@
-var seeditConfig;
+var seeditConfig = {};
 
 module.exports = seeditConfig;
