@@ -2,26 +2,24 @@
 
 ---
 
-[![spm version](http://spmjs.io/badge/seedit-config)](http://spmjs.io/package/seedit-config)
+[![spm version](http://moekit.com/badge/seedit-config)](http://moekit.com/package/seedit-config)
+[![private package](http://moekit.com/privateBadge/bozhong)](http://moekit.com/package/seedit-config)
 
-An awesome spm package!
+
+
+全站统一配置
+从201406开始，需要引入该模块读取配置和测试环境下修改配置。
 
 ---
 
-## Install
 
-```
-$ spm install seedit-config --save
-```
 
-## Usage
+## API
 
-```js
-var seedit-config = require('seedit-config');
-// use seedit-config
-```
+### get <em>function([key])</em>
+获取配置，key为空时，返回整个配置
 
-## Api
+### set <em>function(key,val)</em>
+设定配置
 
-Here is more details.
 
