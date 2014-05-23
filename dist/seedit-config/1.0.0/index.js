@@ -1,1 +1,0 @@
-define("seedit-config/1.0.0/index",[],function(e,i,n){var d;n.exports=d});
