@@ -1,7 +1,7 @@
 var commonAPI;
 var host = window.location.host;
 // default setting
-if (/seedit.com/.test(host) || /localhost/.test(host) || /seedit.cn/.test(host)) {
+if (/seedit.com/.test(host) || /localhost/.test(host) || /seedit.cn/.test(host) || /^\d+.\d+.\d+.\d+/.test(host)) {
     commonAPI = 'http://common.seedit.com';
 } else {
     var hostArr = host.split('.');
