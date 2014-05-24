@@ -5,7 +5,9 @@ if (/seedit.com/.test(host) || /localhost/.test(host) || /seedit.cn/.test(host) 
     commonAPI = 'http://common.seedit.com';
 } else {
     var hostArr = host.split('.');
-    hostArr.splice(0, 1);
+    if(hostArr.length > 2) {
+        hostArr.splice(0, 1);
+    }
     commonAPI = 'http://common.' + hostArr.join('.');
 }
 
