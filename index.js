@@ -42,7 +42,7 @@ function getScopeByUrl(url) {
 
 // is localhost or cms
 function isLocal(url) {
-    return  /localhost/.test(url) || /seedit.cn/.test(url) || /^\d+.\d+.\d+.\d+/.test(url);
+    return  /localhost/.test(url) || /seedit.cn/.test(url) || /^\d+.\d+.\d+.\d+/.test(url) || /moekit/.test(url);
 }
 
 // 获取huodong API
