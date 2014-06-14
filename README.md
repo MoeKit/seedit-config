@@ -4,7 +4,8 @@
 
 [![spm version](http://moekit.com/badge/seedit-config)](http://moekit.com/package/seedit-config)
 [![private package](http://moekit.com/privateBadge/bozhong)](http://moekit.com/package/seedit-config)
-
+[![Coverage Status](https://coveralls.io/repos/MoeKit/seedit-config/badge.png?branch=master)](https://coveralls.io/r/MoeKit/seedit-config?branch=master)
+[![Travic CI Status](https://travis-ci.org/MoeKit/seedit-config.svg)](https://travis-ci.org/MoeKit/seedit-config)
 
 
 全站统一配置
