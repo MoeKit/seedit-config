@@ -43,7 +43,7 @@ describe('write config', function () {
 });
 
 
-describe('detect function', function () {
+describe('detect function with http://', function () {
     it('少凡m站配置测试', function () {
         expect(getCommonAPI('http://m.csf.bzdev.net')).to.be('http://common.csf.bzdev.net');
         expect(getHuodongAPI('http://m.csf.bzdev.net')).to.be('http://huodong.csf.bzdev.net/restful');
@@ -67,6 +67,36 @@ describe('detect function', function () {
     it('线上活动配置测试', function () {
         expect(getCommonAPI('http://huodong.seedit.com')).to.be('http://common.seedit.com');
         expect(getHuodongAPI('http://huodong.seedit.com')).to.be('http://huodong.seedit.com/restful');
+    });
+
+
+});
+
+
+describe('detect function without http://', function () {
+    it('少凡m站配置测试', function () {
+        expect(getCommonAPI('m.csf.bzdev.net')).to.be('http://common.csf.bzdev.net');
+        expect(getHuodongAPI('m.csf.bzdev.net')).to.be('http://huodong.csf.bzdev.net/restful');
+    });
+
+    it('活动office站配置测试', function () {
+        expect(getCommonAPI('huodong.office.bzdev.net')).to.be('http://common.office.bzdev.net');
+        expect(getHuodongAPI('huodong.office.bzdev.net')).to.be('http://huodong.office.bzdev.net/restful');
+    });
+
+    it('承林huodong站配置测试', function () {
+        expect(getCommonAPI('huodong.wcl.bzdev.net')).to.be('http://common.wcl.bzdev.net');
+        expect(getHuodongAPI('huodong.wcl.bzdev.net')).to.be('http://huodong.wcl.bzdev.net/restful');
+    });
+
+    it('活动online站配置测试', function () {
+        expect(getCommonAPI('huodong.online.bozhong.com')).to.be('http://common.online.bozhong.com');
+        expect(getHuodongAPI('huodong.online.bozhong.com')).to.be('http://huodong.online.bozhong.com/restful');
+    });
+
+    it('线上活动配置测试', function () {
+        expect(getCommonAPI('huodong.seedit.com')).to.be('http://common.seedit.com');
+        expect(getHuodongAPI('huodong.seedit.com')).to.be('http://huodong.seedit.com/restful');
     });
 
 

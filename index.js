@@ -55,7 +55,8 @@ function getHuodongAPI(url) {
     if (scope === 'common') {
         return ['http://huodong'].concat(url.split('.').slice(1)).join('.') + '/restful';
     } else {
-        return url + '/restful';
+        var prefix = /^http/.test(url) ? '' : 'http://';
+        return prefix + url + '/restful';
     }
 };
 
