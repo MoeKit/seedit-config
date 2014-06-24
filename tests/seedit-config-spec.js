@@ -2,6 +2,7 @@ var expect = require('expect.js');
 var seeditConfig = require('../index');
 var getCommonAPI = seeditConfig.getCommonAPI;
 var getHuodongAPI = seeditConfig.getHuodongAPI;
+var getSiteUrl = seeditConfig.getSiteUrl;
 
 describe('read config', function () {
 
@@ -100,4 +101,20 @@ describe('detect function without http://', function () {
     });
 
 
+});
+
+
+describe('子站域名获取',function(){
+    it('线上域名',function(){
+        expect(getSiteUrl('bbs','huodong.seedit.com')).to.be('http://bbs.seedit.com');
+        expect(getSiteUrl('bbs','riji.seedit.com')).to.be('http://bbs.seedit.com');
+    });
+    it('online域名',function(){
+        expect(getSiteUrl('bbs','huodong.online.bozhong.com')).to.be('http://bbs.online.bozhong.com');
+        expect(getSiteUrl('bbs','riji.online.bozhong.com')).to.be('http://bbs.online.bozhong.com');
+    });
+    it('office域名',function(){
+        expect(getSiteUrl('bbs','huodong.office.bzdev.net')).to.be('http://bbs.office.bzdev.net');
+        expect(getSiteUrl('bbs','riji.office.bzdev.net')).to.be('http://bbs.office.bzdev.net');
+    });
 });

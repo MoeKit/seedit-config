@@ -76,6 +76,13 @@ function getCommonAPI(url) {
     }
 };
 
+// 根据当前域名获取其他子站域名
+function getSiteUrl(domain, host) {
+    host = host || document.location.host;
+    return ['http://' + domain].concat(host.split('.').slice(1)).join('.');
+};
+
 module.exports = seeditConfig;
 module.exports.getCommonAPI = getCommonAPI;
 module.exports.getHuodongAPI = getHuodongAPI;
+module.exports.getSiteUrl = getSiteUrl;
