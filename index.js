@@ -82,7 +82,13 @@ function getSiteUrl(domain, host) {
     return ['http://' + domain].concat(host.split('.').slice(1)).join('.');
 };
 
+// 获取主域名
+function getMainDomain(host) {
+    return getSiteUrl('',host).replace('http://.','');
+}
+
 module.exports = seeditConfig;
 module.exports.getCommonAPI = getCommonAPI;
 module.exports.getHuodongAPI = getHuodongAPI;
 module.exports.getSiteUrl = getSiteUrl;
+module.exports.getMainDomain = getMainDomain;
