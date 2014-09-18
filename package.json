@@ -1,7 +1,7 @@
 {
     "name": "seedit-config",
     "version": "0.1.1",
-    "description": "",
+    "description": "站内url配置模块",
     "keywords": [],
     "homepage": "https://github.com/MoeKit/seedit-config",
     "author": "airyland",
