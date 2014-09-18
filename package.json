@@ -3,17 +3,17 @@
     "version": "0.1.1",
     "description": "",
     "keywords": [],
-    "homepage": "https://github.com/airyland/seedit-config",
+    "homepage": "https://github.com/MoeKit/seedit-config",
     "author": "airyland",
     "maintainers": [
         "airyland"
     ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/airyland/seedit-config.git"
+        "url": "git://github.com/MoeKit/seedit-config.git"
     },
     "bugs": {
-        "url": "git://github.com/airyland/seedit-config.git/issues"
+        "url": "git://github.com/MoeKit/seedit-config.git/issues"
     },
     "licenses": "MIT",
     "spm": {
