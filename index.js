@@ -2,20 +2,20 @@ var hostname = window.location.hostname;
 var commonAPI = getCommonAPI(hostname);
 var huodongAPI = getHuodongAPI(hostname);
 
-var __seeditConfig = window.__seeditConfig = window.__seeditConfig || {
+var __seeditConfig = window.__seeditConfig = {
     commonAPI: commonAPI, // common API
     huodongAPI: huodongAPI
 };
 
 var seeditConfig = {
-    get: function (key) {
+    get: function(key) {
         if (!key) {
             return __seeditConfig;
         } else {
             return __seeditConfig[key];
         }
     },
-    set: function (key, value) {
+    set: function(key, value) {
         __seeditConfig[key] = value;
     }
 };
@@ -42,13 +42,16 @@ function getScopeByUrl(url) {
 
 // is localhost or cms
 function isLocal(url) {
-    return  /localhost/.test(url) || /seedit.cn/.test(url) || /^\d+.\d+.\d+.\d+/.test(url) || /moekit/.test(url);
+    return /localhost/.test(url) || /seedit.cn/.test(url) || /^\d+.\d+.\d+.\d+/.test(url) || /moekit/.test(url);
 }
 
 // 获取huodong API
 function getHuodongAPI(url) {
     if (isLocal(url)) {
         return 'http://huodong.seedit.com/restful';
+    }
+    if (url.replace('http://', '') === 'bozhong.com') {
+        return 'http://huodong.bozhong.com/restful';
     }
     var scope = getScopeByUrl(url);
     // 当前不在huodong域，拼凑子域名
@@ -67,9 +70,12 @@ function getCommonAPI(url) {
     // default setting
     if (/seedit.com/.test(url) || isLocal(url)) {
         return 'http://common.seedit.com';
+    }
+    if (/http:\/\/bozhong.com/.test(url)) {
+        return 'http://common.' + url.replace('http://', '');
     } else {
         var hostArr = url.split('.');
-        if (hostArr.length > 2) {
+        if (hostArr.length >= 3) {
             hostArr.splice(0, 1);
         }
         return 'http://common.' + hostArr.join('.');
@@ -79,12 +85,16 @@ function getCommonAPI(url) {
 // 根据当前域名获取其他子站域名
 function getSiteUrl(domain, host) {
     host = host || document.location.host;
-    return ['http://' + domain].concat(host.split('.').slice(1)).join('.');
+    var tmp = host.split('.');
+    if (tmp.length >= 3) {
+        tmp = tmp.slice(1);
+    }
+    return ['http://' + domain].concat(tmp).join('.');
 };
 
 // 获取主域名
 function getMainDomain(host) {
-    return getSiteUrl('',host).replace('http://.','');
+    return getSiteUrl('', host).replace('http://.', '').replace('http://', '');
 }
 
 module.exports = seeditConfig;
