@@ -61,8 +61,14 @@ function getHuodongAPI(url) {
         var prefix = /^http/.test(url) ? '' : 'http://';
         return prefix + url + '/restful';
     }
-};
+}
 
+// 获取微信授权代理地址
+function getWechatAuthProxyUrl(){
+    return !!window.location.href.match(/bozhong\.com/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/product.html" :
+            !!window.location.href.match(/seedit\.cc/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/online.html" : 
+                                                            "http://scdn.bozhong.com/source/wechat/redirect/office.html";
+}
 
 // 获取common API
 function getCommonAPI(url) {
@@ -102,3 +108,4 @@ module.exports.getCommonAPI = getCommonAPI;
 module.exports.getHuodongAPI = getHuodongAPI;
 module.exports.getSiteUrl = getSiteUrl;
 module.exports.getMainDomain = getMainDomain;
+module.exports.getWechatAuthProxyUrl = getWechatAuthProxyUrl;
