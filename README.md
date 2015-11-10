@@ -56,3 +56,23 @@ getMainDomain(); // seedit.com
 
 ```
 
+### getWechatAuthProxyUrl
+根据当前域名获取对应微信授权代理地址
+
+```javascript
+// 若当前url为`http://bbs.bozhong.com`
+getWechatAuthProxyUrl(); // http://scdn.bozhong.com/source/wechat/redirect/product.html
+// 若当前url为`http://bbs.online.seedit.cc`
+getWechatAuthProxyUrl(); // http://scdn.bozhong.com/source/wechat/redirect/online.html
+// 若当前url为`http://bbs.office.bzdev.net`
+getWechatAuthProxyUrl(); // http://scdn.bozhong.com/source/wechat/redirect/office.html
+```
+
+### getAppid 
+获取所有可授权appid (array)
+1. 要个宝宝
+2. 小蜜桃
+
+```javascript
+getAppid()[0]; // 默认使用第一个
+```

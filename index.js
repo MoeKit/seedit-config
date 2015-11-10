@@ -63,13 +63,6 @@ function getHuodongAPI(url) {
     }
 }
 
-// 获取微信授权代理地址
-function getWechatAuthProxyUrl(){
-    return !!window.location.href.match(/bozhong\.com/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/product.html" :
-            !!window.location.href.match(/seedit\.cc/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/online.html" : 
-                                                            "http://scdn.bozhong.com/source/wechat/redirect/office.html";
-}
-
 // 获取common API
 function getCommonAPI(url) {
     var scope = getScopeByUrl(url);
@@ -103,9 +96,25 @@ function getMainDomain(host) {
     return getSiteUrl('', host).replace('http://.', '').replace('http://', '');
 }
 
+// 获取微信授权代理地址
+function getWechatAuthProxyUrl(){
+    return !!window.location.href.match(/bozhong\.com/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/product.html" :
+            !!window.location.href.match(/seedit\.cc/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/online.html" : 
+                                                            "http://scdn.bozhong.com/source/wechat/redirect/office.html";
+}
+
+// 获取微信号appid
+function getAppid(){
+    return [
+        "wx06297e68f1f987bd", // 要个宝宝
+        "wx94d275603a55a2d8" // 小蜜桃product
+    ];
+}
+
 module.exports = seeditConfig;
 module.exports.getCommonAPI = getCommonAPI;
 module.exports.getHuodongAPI = getHuodongAPI;
 module.exports.getSiteUrl = getSiteUrl;
 module.exports.getMainDomain = getMainDomain;
 module.exports.getWechatAuthProxyUrl = getWechatAuthProxyUrl;
+module.exports.getAppid = getAppid;
