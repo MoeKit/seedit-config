@@ -4,8 +4,7 @@
 
 ## Normal usage
 
-````javascript
-seajs.use('index', function(seeditConfig) {
-    console.log(seeditConfig);
-});
-````
+```javascript
+var seeditConfig = require('seedit-config')
+console.log(seeditConfig)
+```

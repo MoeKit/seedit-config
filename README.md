@@ -72,6 +72,8 @@ getWechatAuthProxyUrl(); // http://scdn.bozhong.com/source/wechat/redirect/offic
 获取所有可授权appid (array)
 1. 要个宝宝
 2. 小蜜桃
+3. 百事可问
+4. 造人现场
 
 ```javascript
 getAppid()[0]; // 默认使用第一个
