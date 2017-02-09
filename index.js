@@ -98,9 +98,9 @@ function getMainDomain(host) {
 
 // 获取微信授权代理地址
 function getWechatAuthProxyUrl(){
-    return !!window.location.href.match(/bozhong\.com/gi) ? "//scdn.bozhong.com/source/wechat/redirect/product.html" :
-            !!window.location.href.match(/seedit\.cc/gi) ? "//scdn.bozhong.com/source/wechat/redirect/online.html" : 
-                                                            "//scdn.bozhong.com/source/wechat/redirect/office.html";
+    return !!window.location.href.match(/bozhong\.com/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/product.html" :
+            !!window.location.href.match(/seedit\.cc/gi) ? "http://scdn.bozhong.com/source/wechat/redirect/online.html" : 
+                                                            "http://scdn.bozhong.com/source/wechat/redirect/office.html";
 }
 
 // 获取微信号appid
