@@ -70,7 +70,7 @@ function getCommonAPI(url) {
     if (/seedit.com/.test(url) || isLocal(url)) {
         return '//common.seedit.com';
     }
-    if (/http:\/\/bozhong.com/.test(url)) {
+    if (/bozhong.com/.test(url)) {
         return '//common.' + url.replace('//', '');
     } else {
         var hostArr = url.split('.');
