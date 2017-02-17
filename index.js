@@ -65,7 +65,7 @@ function getHuodongAPI(url) {
 
 // 获取common API
 function getCommonAPI(url) {
-    var scope = getScopeByUrl(url);
+    //var scope =  getScopeByUrl(url);
     // default setting
     if (/seedit.com/.test(url) || isLocal(url)) {
         return '//common.seedit.com';
@@ -73,6 +73,7 @@ function getCommonAPI(url) {
     if (/bozhong.com/.test(url)) {
         return '//common.' + url.replace('//', '');
     } else {
+        url = url || document.location.host;
         var hostArr = url.split('.');
         if (hostArr.length >= 3) {
             hostArr.splice(0, 1);
